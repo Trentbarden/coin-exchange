@@ -1,32 +1,25 @@
 .App {
   text-align: center;
-  
+  background-color: rgb(4, 6, 85);
   
 }
 
-.coin-table thead  {
-  color:rgb(8, 0, 2);
+.coin-table {
+  color: white;
   margin: 30px auto 75px auto;
   font-size: 35px;
-  border: 1px solid black;
-  background-color: darkblue;
+   
   
 }
 
-/*.coin-body{
-  background-color: #57e913;
-  border: 3px rgb(35, 158, 148);
-  font-size: 40px;
-}*/
 
 .App-title{
   color:rgb(244, 248, 240);
-  border: 3px solid blanchedalmond;
-  width: 125vh;
+  
 }
 
 .App-logo {
-  height: 2rem;
+  height: 6rem;
   pointer-events: none;
 }
 
@@ -37,12 +30,12 @@
 }
 
 .App-header {
-  background-color: #01040ab2;
+  background-color: rgb(2, 1, 53);
   min-height: 20vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
   

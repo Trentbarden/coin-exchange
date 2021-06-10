@@ -1,7 +1,20 @@
 import React, { Component } from 'react'
-import './Coin.css';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const Td = styled.td `
+margin: 25rem;
+border: solid white;
+`;   
+
+/*.coin-row td {
+    margin-top: auto ;
+    color:white;
+    font-size: 30px;
+    font-weight: 300;
+    border: 2px solid white;
+    width: 25vh;
+}*/
 
 export default class Coin extends Component {
     constructor(props) {
@@ -39,15 +52,15 @@ export default class Coin extends Component {
     }
     render() {
         return ( 
-            <tr className= "coin-row">
-                <td>{this.props.name}</td>
-                <td>{this.props.ticker}</td>
-                <td>${this.state.price}</td>
-                <td>
+            <tr>
+                <Td>{this.props.name}</Td>
+                <Td>{this.props.ticker}</Td>
+                <Td>${this.state.price}</Td>
+                <Td>
                     <form action="#" method="POST">
                     <button onClick={this.handleClick}>Refresh</button>
                     </form>
-                </td>
+                </Td>
             </tr>
         )
     }

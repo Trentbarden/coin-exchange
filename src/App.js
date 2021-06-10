@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Coin from './components/Coin/Coin';
-
+import AccountBalance from './components/AccountBalance/AccountBalance';
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,8 @@ function App() {
         <h1 className= "App-title">
           The Greatest Coin Exchange of All Time
         </h1>
+      </header>
+      <AccountBalance amount= {10000}/>
          <table className= "coin-table">
             <thead>
              <tr>
@@ -18,7 +20,7 @@ function App() {
                <th>Price</th>
              </tr>
             </thead>
-           <tbody> 
+           <tbody > 
              <Coin name= "Bitcoin" ticker= "BTC" price= {9999.99}/>
              <Coin name= "Etherum" ticker= "Eth" price= {299.99}/>
              <Coin name= "Tether" ticker= "USDT" price= {1}/>
@@ -26,7 +28,7 @@ function App() {
            </tbody>
          </table>
         
-      </header>
+      
     </div>
   );
 }
