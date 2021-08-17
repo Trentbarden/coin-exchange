@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import styled from 'styled-components';
 
@@ -30,16 +30,16 @@ background-color: rgb(2, 1, 53);
   
   
 
-export default class ExchangeHeader extends Component {
-    render() {
-        return (
-            <Header>
-            <Img src={logo} alt="React Logo" />
-            <H1>
-              The Greatest Coin Exchange of All Time
-            </H1>
-          </Header>
-        )
-    }
+export default function ExchangeHeader(props) {
+    
+    return (
+        <Header>
+        <Img src={logo} alt="React Logo" />
+        <H1>
+            The Greatest Coin Exchange of All Time
+        </H1>
+        </Header>
+    )
+    
 }
 
