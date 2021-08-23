@@ -5,6 +5,10 @@ import AccountBalance from './components/AccountBalance/AccountBalance';
 import Exchangeheader from './components/ExchangeHeader/ExchangeHeader';
 import axios from 'axios';
 
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+
+import '@fortawesome/fontawesome-free/js/all';
+
 
 const Div = styled.div`
     text-align: center;
@@ -17,7 +21,7 @@ const formatPrice = price => parseFloat(Number(price).toFixed(4));
 function App (props) {
 
   const [balance, setBalance] = useState(10000);
-  const [showBalance, setShowBalance] = useState(true);
+  const [showBalance, setShowBalance] = useState(false);
   const [coinData, setCoinData] = useState([]);
 
   const componentDidMount = async () => {
@@ -45,9 +49,26 @@ function App (props) {
      componentDidMount();
    }
   });
+
+  const handleBrrrr = () => {
+    setBalance(oldBalance => oldBalance + 1200);
+  }
   
   const handleBalanceVisibilityChange = () =>{
    setShowBalance(oldValue => !oldValue);
+  }
+
+  const handleTransaction = (isBuy, valueChangeId) =>{
+    var balanceChange = isBuy ? +1 : -1;
+    const newCoinData = coinData.map(function(values) {
+      let newValues = {...values};
+      if (valueChangeId == values.key) {
+        newValues.balance += balanceChange;
+        setBalance ( oldBalance => oldBalance - balanceChange * newValues.price);
+      }
+      return newValues;
+    });
+    setCoinData(newCoinData);
   }
 
   const handleRefresh = async (valueChangeId) => {
@@ -72,10 +93,12 @@ function App (props) {
          <AccountBalance 
             amount= {balance} 
             showBalance={showBalance} 
+            handleBrrrr={handleBrrrr}
             handleBalanceVisibilityChange={handleBalanceVisibilityChange}/>
          <CoinList 
          coinData={coinData} 
          showBalance={showBalance}
+         handleTransaction={handleTransaction}
          handleRefresh={handleRefresh}/>
          
         

@@ -2,6 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import styled from 'styled-components';
 
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+
+import '@fortawesome/fontawesome-free/js/all';
+
 const Img = styled.img`
 height: 6rem;
     pointer-events: none;
